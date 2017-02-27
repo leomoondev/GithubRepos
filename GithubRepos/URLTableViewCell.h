@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  URLTableViewCell.h
 //  GithubRepos
 //
 //  Created by Hyung Jip Moon on 2017-02-27.
@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "URLTableViewCell.h"
-#import "Repo.h"
 
-@interface ViewController : UIViewController
+@interface URLTableViewCell : UITableViewCell
 
 
 @end
-

@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *storeReposURL;
+@property NSArray *repos;
 
 @end
 
@@ -23,17 +25,49 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"error: %@", error.localizedDescription);
+            return;
+        }
+        NSError *jsonError = nil;
+        self.repos = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if(jsonError) {
+            //Handle the error
+            NSLog(@"jsonError: %@", jsonError.localizedDescription);
+            return ;
+        }
         
-        
+        // If we reach this point, we have successfully retrieved the JSON from the API
+        for(NSDictionary *repo in self.repos) {
+            NSString *repoName = repo[@"name"];
+            NSLog(@"repo: %@", repoName);
+        }
+        [self.storeReposURL reloadData];
     }];
     
     [dataTask resume];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.repos.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myCell" forIndexPath:indexPath];
+    NSDictionary *dict = self.repos[indexPath.row];
+    NSString *name = dict[@"name"];
+    cell.textLabel.text = name;
+    
+    return cell;
+
 }
 
 

@@ -14,6 +14,8 @@
 		DABC93B41E64C66200450520 /* GithubRepos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DABC93B21E64C66200450520 /* GithubRepos.xcdatamodeld */; };
 		DABC93B61E64C66200450520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DABC93B51E64C66200450520 /* Assets.xcassets */; };
 		DABC93B91E64C66200450520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DABC93B71E64C66200450520 /* LaunchScreen.storyboard */; };
+		DABC93C21E64CEA500450520 /* URLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC93C11E64CEA500450520 /* URLTableViewCell.m */; };
+		DABC93C51E64EAA400450520 /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = DABC93C41E64EAA400450520 /* Repo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		DABC93B51E64C66200450520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DABC93B81E64C66200450520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DABC93BA1E64C66200450520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DABC93C01E64CEA500450520 /* URLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLTableViewCell.h; sourceTree = "<group>"; };
+		DABC93C11E64CEA500450520 /* URLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLTableViewCell.m; sourceTree = "<group>"; };
+		DABC93C31E64EAA400450520 /* Repo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
+		DABC93C41E64EAA400450520 /* Repo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,10 @@
 				DABC93BA1E64C66200450520 /* Info.plist */,
 				DABC93B21E64C66200450520 /* GithubRepos.xcdatamodeld */,
 				DABC93A61E64C66200450520 /* Supporting Files */,
+				DABC93C01E64CEA500450520 /* URLTableViewCell.h */,
+				DABC93C11E64CEA500450520 /* URLTableViewCell.m */,
+				DABC93C31E64EAA400450520 /* Repo.h */,
+				DABC93C41E64EAA400450520 /* Repo.m */,
 			);
 			path = GithubRepos;
 			sourceTree = "<group>";
@@ -155,7 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DABC93B41E64C66200450520 /* GithubRepos.xcdatamodeld in Sources */,
+				DABC93C21E64CEA500450520 /* URLTableViewCell.m in Sources */,
 				DABC93AE1E64C66200450520 /* ViewController.m in Sources */,
+				DABC93C51E64EAA400450520 /* Repo.m in Sources */,
 				DABC93AB1E64C66200450520 /* AppDelegate.m in Sources */,
 				DABC93A81E64C66200450520 /* main.m in Sources */,
 			);
